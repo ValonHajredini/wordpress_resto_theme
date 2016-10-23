@@ -39,6 +39,7 @@
 					<li>&copy; All rights reserved 2015</li>
 
 				</ul>
+				<?php dynamic_sidebar( 'footer' ); ?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
