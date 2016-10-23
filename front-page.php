@@ -69,30 +69,18 @@ get_header(); ?>
 
                 <section id="featured">
                     <ul>
-                        <li>
-                            <img src="images/thumb-1.jpg">
-                            <a href="">Fugiat nulla sint</a>
-                            <span>$30</span>
-                            <span class="rating"></span>
-                        </li>
-                        <li>
-                            <img src="images/thumb-1.jpg">
-                            <a href="">Fugiat nulla sint</a>
-                            <span>$30</span>
-                            <span class="rating"></span>
-                        </li>
-                        <li>
-                            <img src="images/thumb-1.jpg">
-                            <a href="">Fugiat nulla sint</a>
-                            <span>$30</span>
-                            <span class="rating"></span>
-                        </li>
-                        <li>
-                            <img src="images/thumb-1.jpg">
-                            <a href="">Fugiat nulla sint</a>
-                            <span>$30</span>
-                            <span class="rating"></span>
-                        </li>
+                        <?php
+                            $query = new WP_Query('category_name=menu-items&posts_per_page=4');
+                        ?>
+                        <?php while ($query->have_posts()) : $query->the_post()?>
+                            <li>
+                                <?php the_post_thumbnail()?>
+                                <a href="<?php the_permalink()?>"><?php the_title()?></a>
+                                <span><?php echo  get_post_meta($post->ID, 'Price', true)?></span>
+                                <span class="star-<?php echo get_post_meta($post->ID, 'rating', true)?> rating"></span>
+                            </li>
+
+                        <?php endwhile; ?>
                     </ul>
                 </section>
             </div>

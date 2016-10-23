@@ -1109,3 +1109,25 @@ footer a{
 	list-style-type: none;
 	padding: 0px;
 }
+.rating{
+	height:12px;
+	background: url(images/star.png);
+	float: none !important;
+	display: block;
+	clear: both;
+}
+.star-1{
+	width:12px;
+}
+.star-2{
+	width:24px;
+}
+.star-3{
+	width:36px;
+}
+.star-4{
+	width:48px;
+}
+.star-5{
+	width:60px;
+}
